@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Vue</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>My Name</h1>
+    <p>{{name}}</p>
+    <h2>{{number}}</h2>
+    <h3>{{randomnumber}}</h3>
+    <button v-on:click="increment">decrime</button>
+    <button v-on:click="random">Random Number</button>
+    <span>Hello</span> 
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        name:"Oh My God" ,
+        number:70 ,
+        randomnumber:0
+      },
+      methods: {
+        increment: function () {
+          this.number--
+        },
+        random: function () {
+           this.randomnumber=Math.random()
+        }
+      }
+    });
+    
+  </script>
+</body>
+</html>
