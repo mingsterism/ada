@@ -38,3 +38,30 @@ Master branch shall then pull their code and merge it into master.
 git checkout Hibiki
 git pull origin master
 ```
+
+# Timeline
+
+### Week 1
+* Learn the basics of Javascript
+* Learn basics of HTML
+
+### Week 2
+* Practice Javascript Algorithms
+* Learn Javascript more indepth
+
+## Week 3
+* Understand Package managers
+* Javascript In depth
+* Practice algorithms
+* Understand how the web works
+* Learn to connect with web servers
+
+## Week 4
+* Learn how to architect software projects
+* Build Javascript Project 1
+
+
+
+
+
+
