@@ -15,7 +15,7 @@ findLongestWord("The quick brown fox jumped over the lazy dog");
 
 
 function titleCase(str) {
-  return str.toLowerCase().split(" ").toUpperCase().join(" ")
+  let word =
 }
 
 console.log(titleCase("I'm a little tea pot"));
