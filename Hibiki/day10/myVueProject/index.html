@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Vue</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+   <h1>Hibiki Want to Do</h1>
+   <p>{{ number }}</p>
+   <button v-on:click ="number += 1">Increment Number</button>
+   <h3>Want to do</h3>
+   <input v-on:keyup.enter="todoInput" v-model="inputTodo" ></input>
+   <ul>What I need to do?
+     <li v-for="anyThing in todoList" >{{anyThing}}</li>
+   </ul>
+  
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        number:0,
+        todoList:[],
+        inputTodo:'',
+      
+        
+      },
+      methods: {
+          todoInput(){
+          this.todoList.push(this.inputTodo);
+          this.inputTodo = ""
+        }
+      }
+    })
+  </script>
+</body>
+</html>
