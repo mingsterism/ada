@@ -14,7 +14,7 @@
       <h1>{{inputTodo}}</h1>{{inputTodo}}
     </div>
     <h1>
-      {{todos}}
+      {{todos[0]}}
     </h1>
     <ul>
       <li v-for="todo in todos">{{todo}}</li>
@@ -29,7 +29,7 @@
         myname: "Ming", 
         counter: 0, 
         inputTodo: 'hi',
-        todos: ['CLean FLoor[']
+        todos: ['CLean FLoor']
       },
       methods: {
         incrementFunction () {
