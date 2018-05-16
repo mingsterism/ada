@@ -1,21 +1,18 @@
 // @flow
 
-
-
-
-function fizzBuzz (number) {
+function fizzBuzz(number) {
   if (number % 3 === 0 && number % 5 === 0) {
-    return 'fizzBuzz'
+    return 'fizzBuzz';
   } else if (number % 3 === 0) {
-    return 'fizz'
+    return 'fizz';
   } else if (number % 5 === 0) {
-    return 'Buzz'
+    return 'Buzz';
   }
 }
 
-function loopBuzz (num) {
+function loopBuzz(num) {
   for (let n = 0; n < num; n += 1) {
-    console.log(fizzBuzz(n))
+    console.log(fizzBuzz(n));
   }
 }
 

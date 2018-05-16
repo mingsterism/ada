@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Vue</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>{{Title}}</h1>
+    <div>
+      <input v-on:keyup.enter="addTodos" v-model="inputTodo" type="text">
+    </div>
+    <h2>Number Of Task Tod Do : {{todos.length}}</h2>
+    <ul>
+      <h2>
+        List of Todo :
+        <li v-for="todo in todos">{{todo}}</li></h2>
+    </ul>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        Title: "Wing Todo List",  
+        inputTodo: '',
+        todos: []
+      },
+      
+      methods: {
+        incrementFunction () {
+          this.counter = this.counter + 1
+        }, 
+        addTodos () {
+          this.todos.push(this.inputTodo);
+          this.inputTodo = " "
+        }
+      }
+    })
+  </script>
+</body>
+</html>
