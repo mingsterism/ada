@@ -12,11 +12,11 @@ var db = admin.database();
 
 var ref = db.ref("Games/Action Games");
 
-// ref.once("value", function(x) {
-//   console.log(x.val());
-// });
+ref.once("value", function(x) {
+  console.log(x.val());
+});
 
-ref.update({
-  "CS": 4,
-  "DOTA": 45
-})
+// ref.update({
+//   "CS": 4,
+//   "DOTA": 45
+// })
