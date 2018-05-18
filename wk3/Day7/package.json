@@ -1,0 +1,17 @@
+{
+  "name": "cat-package",
+  "version": "1.0.0",
+  "description": "My first package containing all the algorithm codes. ",
+  "main": "findLongestWord.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ming",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "flow-bin": "^0.71.0"
+  }
+}
