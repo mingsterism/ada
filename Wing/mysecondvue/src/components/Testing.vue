@@ -22,7 +22,7 @@ export default {
   methods: {
     todoInput() {
       this.todoList.push(this.inputTodo);
-      this.inputTodo = ' ',
+      this.inputTodo = ' ';
     },
 
   },
