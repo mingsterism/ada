@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Vue</title>
+  <script src="https://unpkg.com/vue"></script>
+  <!-- Vue -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-firestore.js"></script>
+  <!-- VueFire -->
+  <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+</head>
+<body>
+  <div id="app">
+  </div>
+  <div id="demo">
+      {{anArray}}
+  </div>
+
+  <script>
+   firebase.initializeApp({ 
+      apiKey: "AIzaSyCDnFzsRNmq5wdufxb5vfw-ZPo9cU8B3Yo",
+      authDomain: "gallahad-s-office.firebaseapp.com",
+      databaseURL: "https://gallahad-s-office.firebaseio.com",
+      projectId: "gallahad-s-office",
+      storageBucket: "gallahad-s-office.appspot.com",
+      messagingSenderId: "52363642366"
+     })
+    var db = firebase.firestore()
+
+    var vm = new Vue({
+      el: '#demo',
+      data () {
+        return {
+         }
+      },
+      firebase() {
+        return {
+          // simple syntax, bind as an array by default
+          anArray: db.collection('Kingsman'),
+          // can also bind to a query
+          // anArray: db.ref('url/to/my/collection').limitToLast(25)
+          // full syntax
+        }
+      }
+    })
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        greeting: 'Welcome to your Vue.js app!',
+        docsURL: 'http://vuejs.org/guide/',
+        discordURL: 'https://chat.vuejs.org',
+        forumURL: 'http://forum.vuejs.org/'
+      },
+      methods: {
+        humanizeURL: function (url) {
+          return url
+            .replace(/^https?:\/\//, '')
+            .replace(/\/$/, '')
+        }
+      }
+    })
+  </script>
+</body>
+</html>
