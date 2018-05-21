@@ -10,6 +10,7 @@
   "description": "eslintforall",
   "dependencies": {
     "flow-bin": "^0.72.0",
+    "vue": "^2.5.16",
     "vue-cli": "^2.9.3"
   },
   "devDependencies": {

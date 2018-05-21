@@ -20,7 +20,7 @@ export default {
     Hello,
     itemList,
   },
-};
+}
 </script>
 
 <style>
