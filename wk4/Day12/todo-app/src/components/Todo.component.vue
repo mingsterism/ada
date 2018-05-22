@@ -23,31 +23,63 @@ export default {
     return {
       todo: '',
       todosList: [],
+      household: [],
     };
   },
+
   methods: {
     getFromFirestore() {
-      fireDB.collection('todos').get().then((doc) => {
-        if (doc.size !== 0) {
-          const td = [];
-          doc.forEach((x) => {
-            td.push(x.data());
+      const foo = (querySnapshot) => {
+        if (querySnapshot.size !== 0) {
+          querySnapshot.forEach((doc) => {
+            this.todosList.push(doc.data());
           });
-          this.todosList = td;
         }
+      };
+      fireDB.collection('todos').get().then(foo, (err) => {
+        console.log(err);
       });
+
+      fireDB.collection('Products').doc('Household').get().then((doc) => {
+        console.log(doc.data());
+      });
+      fireDB
+        .collection('Products')
+        .doc('Household')
+        .collection('Kitchen')
+        .get()
+        .then((doc) => {
+          console.log(doc);
+        });
+      fireDB.collection('cities')
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            console.log(doc.data(), '-----------');
+          });
+        });
     },
     handleEnter() {
       const todoStore = fireDB.collection('todos');
       todoStore.add({
         task: this.todo,
       });
+
+      console.log('-----------Setting tasks -------------------------------');
+      const specialTasks = fireDB.collection('todos').doc('specialTasks');
+      specialTasks.update({
+        task101: this.todo,
+      }).then(() => {
+        console.log('Success');
+      }, (err) => {
+        console.log('Error: ', err);
+      });
       this.getFromFirestore();
       this.todo = '';
     },
-  },
-  created() {
-    this.getFromFirestore();
+    created() {
+      this.getFromFirestore();
+    },
   },
 };
 </script>
